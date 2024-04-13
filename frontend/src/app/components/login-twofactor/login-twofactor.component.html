@@ -1,0 +1,11 @@
+<div class="outer">
+  <div class="container">
+    <p class="naslov">2FA Login</p>
+    <p class="tekst">Poslali smo Vam kod na email. Unesite ga ispod.</p>
+    <label for="kod">Kod:</label>
+    <input id="kod" type="text" [(ngModel)]="this.login2faRequest.twoFactorCode">
+    <div class="forgotpass-confirm">
+      <button (click)="this.logIn()">Potvrdi</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+.container{
+  height: fit-content;
+  width: 100%;
+  padding:30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container-gornji,
+.container-donji{
+  height: fit-content;
+  width: 100%;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.knjiga-slika,
+.knjiga-podaci,
+.container-donji div{
+  flex-basis: 35%;
+}
+
+.podaci-donji
+{
+  padding: 10px;
+}
+
+.container-donji{
+  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  padding-bottom: 10px;
+}
+
+.container-donji p{
+  color:#474f62;
+  margin-top: 5px;
+}
+
+.knjiga-slika img{
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+}
+
+.knjiga-podaci{
+  width: 100%;
+  padding:10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.naslov{
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.autor p,
+.recenzija
+{
+  color:#474f62;
+}
+
+.cijena{
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.cijena-stanje,
+.korpa-wishlist{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.autori{
+  width: 100%;
+  height: fit-content;
+  display:flex;
+  flex-direction: column;
+}
+
+.korpa-wishlist button{
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  border:none;
+  padding:15px;
+  font-size: large;
+}
+
+.korpa-wishlist button:hover{
+  cursor:pointer;
+}
+
+.korpa{
+  background-color: #328846;
+  color:white;
+}
+
+.korpa:hover{
+  background-color: #4a9858;
+}
+
+.wishlist
+{
+  background-color: #98989a;
+}
+
+.wishlist:hover{
+  background-color: #c9c9c9;
+}
+
+.izmijeni, .obrisi{
+  color:white;
+  width: 40%;
+}
+
+.izmijeni{
+  background-color: #7c95e8;
+}
+
+.izmijeni:hover{
+  cursor: pointer;
+  background-color: #a6b5f5;
+}
+
+.obrisi{
+  background-color: #d97676;
+}
+
+.obrisi:hover{
+  cursor: pointer;
+  background-color: #e89595;
+}
+

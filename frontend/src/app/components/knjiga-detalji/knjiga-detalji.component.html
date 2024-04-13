@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="container-gornji">
+  <div class="knjiga-slika">
+    <img src="{{knjiga?.slika.slikaPutanja}}" alt="Slika">
+  </div>
+  <div class="knjiga-podaci">
+    <p class="naslov">{{knjiga?.naslov}}</p>
+    <div class="autori">
+      <div class="autor" *ngFor="let autor of knjiga?.autori">
+        <p>{{autor.autor.ime}} {{autor.autor.prezime}}</p>
+      </div>
+    </div>
+<!--    <p class="recenzija">&#9734; Prosječna ocjena: 10/10</p>-->
+    <div class="cijena-stanje">
+      <p class="stanje">{{knjiga?.naStanju}} na stanju</p>
+      <p class="cijena">{{knjiga?.cijena.toFixed(2)}} KM</p>
+    </div>
+    <div class="korpa-wishlist">
+      <button class="korpa" *ngIf="this.authService.isUloga('Korisnik') || !this.authService.isLogiran()">Dodaj u korpu</button>
+      <button class="wishlist" *ngIf="this.authService.isUloga('Korisnik') || !this.authService.isLogiran()">Dodaj u wishlist</button>
+      <button class="izmijeni" *ngIf="this.authService.isUloga('Uposlenik')" (click)="izmijeni()">Izmijeni</button>
+      <button class="obrisi" *ngIf="this.authService.isUloga('Uposlenik')" (click)="obrisi()">Obriši</button>
+    </div>
+  </div>
+  </div>
+  <div class="container-donji">
+    <div class="podaci-donji">
+      <p class="zanr">Žanr: {{knjiga?.zanr?.naziv}}</p>
+      <p class="opis">Opis: {{knjiga?.opis}}</p>
+      <p class="isbn">ISBN: {{knjiga?.isbn}}</p>
+      <p class="izdavac">Izdavač: {{knjiga?.izdavac?.naziv}}</p>
+      <p class="datum-izdavanja">Datum izdavanja: {{knjiga?.datumIzdavanja | date}}</p>
+      <p class="broj-stranica">Broj stranica: {{knjiga?.brojStranica}}</p>
+    </div>
+    <div></div>
+  </div>
+  <app-recenzije [urlPost]="urlPost" [urlRecenzije]="urlRecenzije" [id]="id" [isKnjigaRecenzija]="true"></app-recenzije>
+</div>

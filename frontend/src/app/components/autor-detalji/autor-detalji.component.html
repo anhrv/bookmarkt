@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="container-gornji">
+    <div class="autor-slika">
+      <img src="{{autor?.slika.slikaPutanja}}" alt="Slika">
+    </div>
+    <div class="autor-podaci">
+      <p class="ime-prezime">{{autor?.ime}} {{autor?.prezime}}</p>
+      <p class="datum-rodjenja">Datum rođenja: {{autor?.datumRodjenja | date}}</p>
+      <p class="drzava">Država: {{autor?.drzava}}</p>
+      <p class="biografija">Biografija: {{autor?.biografija}}</p>
+      <div class="korpa-wishlist" *ngIf="this.authService.isUloga('Uposlenik')">
+        <button class="izmijeni" (click)="izmijeni()">Izmijeni</button>
+        <button class="obrisi" (click)="obrisi()">Obriši</button>
+      </div>
+    </div>
+  </div>
+  <app-recenzije [urlPost]="urlPost" [urlRecenzije]="urlRecenzije" [id]="id" [isAutorRecenzija]="true"></app-recenzije>
+</div>

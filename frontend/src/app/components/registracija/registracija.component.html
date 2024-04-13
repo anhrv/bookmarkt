@@ -1,0 +1,12 @@
+<div class="outer">
+  <div class="container">
+    <p class="naslov">Registracija</p>
+    <label for="ime">Korisničko ime:</label>
+    <input id="ime" type="text" [(ngModel)]="regRequest.korisnickoIme">
+    <label for="email">Email:</label>
+    <input id="email" type="email" [(ngModel)]="regRequest.email">
+    <label for="lozinka">Lozinka:</label>
+    <input id="lozinka" type="password" [(ngModel)]="regRequest.lozinka">
+    <button (click)="registracija()">Potvrdi</button>
+  </div>
+</div>

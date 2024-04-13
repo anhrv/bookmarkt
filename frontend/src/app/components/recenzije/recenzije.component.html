@@ -1,0 +1,59 @@
+<div class="recenzije-container">
+  <div class="naslov-dodaj">
+    <p class="naslov-recenzije">Recenzije</p>
+    <button class="dodaj" (click)="dodaj()" *ngIf="this.authService.isUloga('Korisnik') || !this.authService.isLogiran()"><i class="fa fa-plus"></i> Dodaj</button>
+  </div>
+  <div class="recenzija-box-dodaj" *ngIf="isDodajVidljiv">
+    <div class="korisnik-ocjena">
+      <label for="ocjena" class="dodaj-ocjena">Ocjena: </label>
+      <input id="ocjena" class="ocjena-input" type="number" min="0" max="10" [(ngModel)]="recRequest.ocjena">
+      <p> / 10</p>
+    </div>
+    <div class="tekst-rec">
+        <textarea
+          id="tekst-dodaj"
+          class="dodaj-tekst"
+          [(ngModel)]="recRequest.tekst">
+        </textarea>
+    </div>
+    <div class="buttoni">
+      <button class="dodaj-button" (click)="dodajRecenziju()">Dodaj</button>
+      <button class="odustani-button" (click)="odustani()">Odustani</button>
+    </div>
+  </div>
+  <div class="recenzija-box-dodaj" *ngIf="isUpdateVidljiv">
+    <div class="korisnik-ocjena">
+      <label for="ocjena-update" class="dodaj-ocjena">Ocjena: </label>
+      <input id="ocjena-update" class="ocjena-input" type="number" min="0" max="10" [(ngModel)]="recUpdateRequest.ocjena">
+      <p> / 10</p>
+    </div>
+    <div class="tekst-rec">
+        <textarea
+          id="tekst"
+          class="dodaj-tekst"
+          [(ngModel)]="recUpdateRequest.tekst">
+        </textarea>
+    </div>
+    <div class="buttoni">
+      <button class="dodaj-button" (click)="snimiRecenziju()">Sačuvaj</button>
+      <button class="odustani-button" (click)="odustaniUpdate()">Odustani</button>
+    </div>
+  </div>
+  <div class="recenzije" *ngFor="let recenzija of recenzije">
+    <div class="recenzija-box">
+      <div class="korisnik-ocjena2">
+        <div class="korisnikOcjena">
+          <p class="korisnik">{{recenzija.nalog.korisnickoIme}}</p>
+          <p class="ocjena">&#9734;  {{recenzija.ocjena.toFixed(1)}} / 10</p>
+        </div>
+        <div class="korisnikOcjenaButtoni" *ngIf="userID==recenzija.nalog.nalogID">
+          <button class="izmjeni" (click)="izmjeni(recenzija)">Izmjeni</button>
+          <button class="obrisi" (click)="obrisi(recenzija)">Obriši</button>
+        </div>
+      </div>
+      <div class="tekst-rec">
+        <p class="tekst">{{recenzija.tekst}}</p>
+      </div>
+    </div>
+  </div>
+</div>

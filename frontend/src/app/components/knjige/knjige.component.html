@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<div class="pretraga">
+  <input id="pretraga" class="knjiga-pretraga" placeholder="Pretražite po naslovu" [(ngModel)]="pretragaKnjige">
+  <button class="dodaj" *ngIf="this.authService.isUloga('Uposlenik')" routerLink="/knjiga/dodaj">
+    <i class="fa fa-plus"></i>Dodaj
+  </button>
+</div>
+<div class="filteri">
+  <div class="text-filteri">
+    <label class="autor-label">Autor:</label>
+    <input class="autor-input" [(ngModel)]="pretragaPoAutoru">
+    <label for="izdavac-input" class="izdavac-label">Izdavač:</label>
+    <input id="izdavac-input" class="izdavac-input" [(ngModel)]="pretragaPoIzdavacu">
+    <label for="isbn-input" class="isbn-label">ISBN:</label>
+    <input id="isbn-input" class="isbn-input" [(ngModel)]="pretragaPoISBNu">
+    <label for="zanr-input" class="zanr-label">Žanr:</label>
+    <input id="zanr-input" class="zanr-input" [(ngModel)]="pretragaPoZanru">
+  </div>
+  <div class="brojni-filteri-sortovi">
+    <div class="cijena-izbor">
+      <label for="cijena-unos-od" class="cijena-label">Cijena:</label>
+      <input id="cijena-unos-od" class="cijena-unos" type="number" [(ngModel)]="cijenaOd">
+      <label for="cijena-unos-do" class="cijena-do">do</label>
+      <input id="cijena-unos-do" class="cijena-unos" type="number" [(ngModel)]="cijenaDo">
+    </div>
+    <div class="stranice-izbor">
+      <label for="stranice-unos-od" class="stranice-label">Broj stranica:</label>
+      <input id="stranice-unos-od" class="stranice-unos" type="number" [(ngModel)]="brojStranicaOd">
+      <label for="cijena-unos-do" class="stranice-do">do</label>
+      <input id="stranice-unos-do" class="stranice-unos" type="number" [(ngModel)]="brojStranicaDo">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="knjiga" routerLink="{{knjiga.knjigaID}}" *ngFor="let knjiga of getFiltriraneKnjige()">
+    <img src="{{knjiga.slika.slikaPutanja}}" alt="Slika">
+    <div class="knjiga-data">
+      <p class="naslov">{{knjiga.naslov}}</p>
+      <div class="autori" *ngFor="let autor of knjiga.autori">
+        <p class="autor">{{autor.autor.ime}} {{autor.autor.prezime}}</p>
+      </div>
+    </div>
+    <div class="izdavac-zanr">
+      <p class="izdavac">{{knjiga.izdavac?.naziv??null}}</p>
+      <p class="zanr">{{knjiga.zanr?.naziv??null}}</p>
+    </div>
+    <div class="isbn-stranice">
+      <p class="isbn">{{knjiga.isbn}}</p>
+      <p class="stranice" *ngIf="knjiga.brojStranica!=null">{{knjiga.brojStranica??null}} stranica</p>
+    </div>
+    <div class="stanje-cijena">
+        <p class="naStanju">{{knjiga.naStanju}} <span class="na-stanju-tekst">na stanju</span></p>
+        <p class="cijena">{{knjiga.cijena.toFixed(2)}} KM</p>
+    </div>
+  </div>
+</div>

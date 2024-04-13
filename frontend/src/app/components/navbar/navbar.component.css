@@ -1,0 +1,78 @@
+.navbar{
+  background-color: #72ce8a;
+  height: 40px;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px -1px 2px 0px rgba(0,0,0,0.4) inset;
+  -webkit-box-shadow: 0px -1px 2px 0px rgba(0,0,0,0.4) inset;
+  -moz-box-shadow: 0px -1px 2px 0px rgba(0,0,0,0.4) inset;
+}
+
+.logo{
+  width: 20px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.title{
+  text-decoration: none;
+  color:white;
+  font-size: larger;
+  width: 120px;
+}
+
+.nav-primary{
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-primary li {
+  display:inline;
+  margin-right: 20px;
+}
+
+.nav-primary li a{
+  text-decoration: none;
+  color:white;
+  font-size: medium;
+}
+
+.nav-primary li a:hover {
+  color: #eae9e9;
+}
+
+.low-navbar{
+  background-color: #eceaea;
+  height: 50px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.4);
+}
+
+.low-nav-primary{
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+
+.low-nav-primary li {
+  display:inline;
+}
+
+.low-nav-primary li a{
+  text-decoration: none;
+  color: #2a3041;
+  font-size: large;
+  font-weight: normal;
+}
+
+.low-nav-primary li a:hover {
+  color: #98989a;
+}

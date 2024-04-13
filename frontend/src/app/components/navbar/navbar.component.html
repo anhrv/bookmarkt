@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <section>
+    <a class="title" routerLink="/"><i class="fa fa-book"></i>Bookmarkt</a>
+  </section>
+  <ul class="nav-primary" *ngIf="!this.authService.isLogiran()">
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/registracija">Registracija</a></li>
+  </ul>
+  <ul class="nav-primary" *ngIf="this.authService.isLogiran()">
+    <li *ngIf="this.authService.isUloga('Korisnik')"><a><i class="fa fa-heart"></i></a></li>
+    <li *ngIf="this.authService.isUloga('Korisnik')"><a><i class="fa fa-shopping-cart"></i></a></li>
+    <li><a routerLink="/moj-nalog"><i class="fa fa-user"></i></a></li>
+    <li><a (click)="logOut()">Odjava</a></li>
+  </ul>
+</nav>
+<nav class="low-navbar">
+  <ul class="low-nav-primary">
+    <li><a routerLink="/knjige">Knjige</a></li>
+    <li><a routerLink="/autori">Autori</a></li>
+    <li><a routerLink="/izdavaci">Izdavači</a></li>
+    <li *ngIf="this.authService.isUloga('Uposlenik')"><a>Dobavljači</a></li>
+    <li *ngIf="this.authService.isUloga('Uposlenik')"><a>Žanrovi</a></li>
+    <li *ngIf="this.authService.isUloga('Uposlenik')"><a>Metode plaćanja</a></li>
+    <li *ngIf="this.authService.isUloga('Uposlenik')"><a>Metode dostave</a></li>
+    <li *ngIf="this.authService.isUloga('Uposlenik')"><a>Popusti</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="container-gornji">
+    <div class="izdavac-slika">
+      <img src="{{izdavac?.slika.slikaPutanja}}" alt="Slika">
+    </div>
+    <div class="izdavac-podaci">
+      <p class="naziv">{{izdavac?.naziv}}</p>
+      <p class="email">Email: {{izdavac?.email}}</p>
+      <p class="telefon">Telefon: {{izdavac?.telefon}}</p>
+      <p class="adresa">Adresa: {{izdavac?.adresa}}</p>
+      <div class="korpa-wishlist" *ngIf="this.authService.isUloga('Uposlenik')">
+        <button class="izmijeni" (click)="izmijeni()">Izmijeni</button>
+        <button class="obrisi" (click)="obrisi()">Obriši</button>
+      </div>
+    </div>
+  </div>
+  <app-recenzije [urlPost]="urlPost" [urlRecenzije]="urlRecenzije" [id]="id" [isIzdavacRecenzija]="true"></app-recenzije>
+</div>

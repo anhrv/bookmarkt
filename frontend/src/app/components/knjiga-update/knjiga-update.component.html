@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="unos">
+    <div class="container-podaci">
+      <label for="Naslov">Naslov: </label>
+      <input type="text" id="Naslov" [(ngModel)]="this.knjigaUpdateRequest.naslov">
+      <label for="ISBN">ISBN: </label>
+      <input type="text" id="ISBN" [(ngModel)]="this.knjigaUpdateRequest.isbn">
+      <label for="Opis">Opis: </label>
+      <textarea id="Opis" [(ngModel)]="this.knjigaUpdateRequest.opis">
+      </textarea>
+      <label for="Autori">Autori: <a routerLink="/autor/dodaj">DODAJ AUTORA</a></label>
+      <select id="Autori" multiple [(ngModel)]="this.knjigaUpdateRequest.autorIDs">
+        <option *ngFor="let autor of autoriResponse" value="{{autor.autorID}}" >{{autor.ime}} {{autor.prezime}}</option>
+      </select>
+      <label for="Izdavac">Izdavač: <a routerLink="/izdavac/dodaj">DODAJ IZDAVAČA</a></label>
+      <select id="Izdavac" [(ngModel)]="this.knjigaUpdateRequest.izdavacID">
+        <option value=""></option>
+        <option *ngFor="let izdavac of izdavaciResponse" value="{{izdavac.izdavacID}}">{{izdavac.naziv}}</option>
+      </select>
+      <label for="Žanr">Žanr: <a>DODAJ ŽANR</a></label>
+      <select id="Žanr" [(ngModel)]="this.knjigaUpdateRequest.zanrID">
+        <option value=""></option>
+        <option *ngFor="let zanr of zanroviResponse" value="{{zanr.zanrID}}">{{zanr.naziv}}</option>
+      </select>
+    </div>
+    <div class="container-slika">
+      <img class="slika" src="{{this.knjigaUpdateRequest.slikaPutanja}}">
+      <div class="slika-buttoni">
+        <button>Dodaj</button>
+        <button>Ukloni</button>
+      </div>
+      <div class="podaci-sipod-slike">
+        <label for="Datum">Datum izdavanja: </label>
+        <input type="date" id="Datum" [ngModel]="this.knjigaUpdateRequest.datumIzdavanja | date:'yyyy-MM-dd'" (ngModelChange)="this.knjigaUpdateRequest.datumIzdavanja=$event">
+        <label for="stranica">Broj stranica: </label>
+        <input type="number" min="0" id="stranica" [(ngModel)]="this.knjigaUpdateRequest.brojStranica">
+        <label for="Cijena">Cijena: </label>
+        <input type="number" min="0" id="Cijena" [(ngModel)]="this.knjigaUpdateRequest.cijena">
+        <label for="stanju">Na stanju: </label>
+        <input type="number" min="0" id="stanju" [(ngModel)]="this.knjigaUpdateRequest.naStanju">
+      </div>
+    </div>
+  </div>
+  <div class="buttoni">
+    <button class="potvrdi" (click)="potvrdi()">Potvrdi</button>
+    <button class="odustani" (click)="odustani()">Odustani</button>
+  </div>
+</div>

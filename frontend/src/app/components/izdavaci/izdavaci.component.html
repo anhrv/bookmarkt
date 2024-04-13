@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="pretraga">
+  <input id="pretraga" class="izdavac-pretraga" placeholder="Pretražite po nazivu izdavača" [(ngModel)]="pretragaNaziv">
+  <button class="dodaj" *ngIf="this.authService.isUloga('Uposlenik')" routerLink="/izdavac/dodaj">
+    <i class="fa fa-plus"></i>Dodaj
+  </button>
+</div>
+<div class="container">
+  <div class="izdavac" routerLink="{{izdavac.izdavacID}}" *ngFor="let izdavac of getFiltriraniIzdavaci()">
+    <img src="{{izdavac.slika.slikaPutanja}}" alt="Slika">
+    <div class="izdavac-data">
+      <p class="naziv">{{izdavac.naziv}}</p>
+    </div>
+  </div>
+</div>

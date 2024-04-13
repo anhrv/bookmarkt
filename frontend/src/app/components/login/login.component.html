@@ -1,0 +1,13 @@
+<div class="outer">
+<div class="container">
+  <p class="naslov">Login</p>
+  <label for="email">Email:</label>
+  <input id="email" type="email" [(ngModel)]="loginRequest.email">
+  <label for="lozinka">Lozinka:</label>
+  <input id="lozinka" type="password" [(ngModel)]="loginRequest.lozinka">
+  <div class="forgotpass-confirm">
+    <a routerLink="/forgot-password">Zaboravili ste lozinku?</a>
+    <button (click)="logIn()">Potvrdi</button>
+  </div>
+</div>
+</div>

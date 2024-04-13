@@ -1,0 +1,117 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: fit-content;
+  width: 100%;
+  padding:20px;
+}
+
+.unos{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: fit-content;
+  width: 100%;
+}
+
+.container-podaci,
+.container-slika{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-basis: 40%;
+  padding:10px;
+}
+
+.container-slika{
+  align-items: center;
+}
+
+.slika{
+  width: 60%;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+}
+
+.podaci-sipod-slike{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.buttoni{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: right;
+  padding:20px;
+}
+
+button{
+  font-size: medium;
+  padding:10px;
+  border:none;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  margin:0 10px;
+  cursor:pointer;
+}
+
+button:hover{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.potvrdi, .odustani{
+  color:white;
+}
+
+.potvrdi{
+  background-color: #7c95e8;
+}
+
+.potvrdi:hover{
+  cursor: pointer;
+  background-color: #a6b5f5;
+}
+
+.odustani{
+  background-color: #d97676;
+}
+
+.odustani:hover{
+  cursor: pointer;
+  background-color: #e89595;
+}
+
+label{
+  color: #474f62;
+  font-size: medium;
+  margin-top: 10px;
+}
+
+input,select, option{
+  font-size: medium;
+  padding:5px;
+}
+
+#Opis{
+  resize: none;
+  height:100px;
+  padding:5px;
+  font-size: medium;
+}
+
+a{
+  color:green;
+  text-decoration: none;
+  font-size: small;
+  float:right;
+}

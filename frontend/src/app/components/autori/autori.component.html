@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="pretraga">
+  <input id="pretraga" class="autor-pretraga" placeholder="Pretražite po nazivu autora" [(ngModel)]="pretragaImePrezime">
+  <button class="dodaj" *ngIf="this.authService.isUloga('Uposlenik')" routerLink="/autor/dodaj">
+    <i class="fa fa-plus"></i>Dodaj
+  </button>
+</div>
+<div class="container">
+  <div class="author" routerLink="{{autor.autorID}}" *ngFor="let autor of getFiltriraniAutori()">
+    <img src="{{autor.slika.slikaPutanja}}" alt="Slika">
+    <div class="author-data">
+      <p class="ime-prezime">{{autor.ime}} {{autor.prezime}}</p>
+    </div>
+  </div>
+</div>

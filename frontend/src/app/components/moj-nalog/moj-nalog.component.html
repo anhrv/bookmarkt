@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="podaci">
+    <p class="naslov" (click)="setPodaciVidljivost()">Podaci o nalogu</p>
+    <div class="podaci-inputi" *ngIf="isPodaciVidljivi">
+      <label for="ime">Korisničko ime:</label>
+      <input id="ime" type="text" [(ngModel)]="podaciReuest.korisnickoIme">
+      <label for="email">Email:</label>
+      <input id="email" type="email" [(ngModel)]="podaciReuest.email">
+      <div class="tfa-input">
+        <label id="2fa-label" for="2fa">Two-factor autentifikacija:</label>
+        <input id="2fa" type="checkbox" [(ngModel)]="podaciReuest.twoFactorEnabled">
+      </div>
+      <p>Datum registracije: {{logiraniKorisnik.datumRegistracije | date}}</p>
+      <p>Uloga: {{logiraniKorisnik.uloga.naziv}}</p>
+      <div class="buttoni">
+        <button class="potvrdi" (click)="podaciPotvrdi()" [ngStyle]="clickablePodaci()">Potvrdi</button>
+        <button class="odustani" (click)="podaciOdustani()">Odustani</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="lozinka">
+    <p class="naslov" (click)="setLozinkaVidljivost()">Promjena lozinke</p>
+    <div class="lozinka-inputi" *ngIf="isLozinkaVidljivi">
+      <label for="trenutna">Trenutna lozinka:</label>
+      <input id="trenutna" type="password" [(ngModel)]="lozinkaRequest.trenutnaLozinka">
+      <label for="nova">Nova lozinka:</label>
+      <input id="nova" type="password" [(ngModel)]="lozinkaRequest.novaLozinka">
+      <label for="potvrda">Potvrda nove lozinke:</label>
+      <input id="potvrda" type="password" [(ngModel)]="lozinkaRequest.novaLozinkaPotvrda">
+      <div class="buttoni">
+        <button class="potvrdi" (click)="lozinkaPotvrdi()" [ngStyle]="clickableLozinka()">Potvrdi</button>
+        <button class="odustani" (click)="lozinkaOdustani()">Odustani</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="brisanje">
+    <p class="naslov" (click)="setBrisanjeVidljivost()">Brisanje naloga</p>
+    <div class="brisanje-inputi" *ngIf="isBrisanjeVidljivi">
+      <p class="upozorenje">Ovim postupkom nepovratno brišete svoj nalog, kao i sav sadržaj vezan za njega (recenzije, wishlist, korpu). Ako ste sigurni da želite to uraditi, unesite vašu trenutnu lozinku.</p>
+      <label for="trenuta-brisanje">Trenutna lozinka:</label>
+      <input id="trenuta-brisanje" type="password" [(ngModel)]="brisanjeRequest.lozinka">
+      <div class="buttoni">
+        <button class="potvrdi" (click)="brisanjePotvrdi()" [ngStyle]="clickableBrisanje()">Potvrdi</button>
+        <button class="odustani" (click)="brisanjeOdustani()">Odustani</button>
+      </div>
+    </div>
+
+  </div>
+</div>

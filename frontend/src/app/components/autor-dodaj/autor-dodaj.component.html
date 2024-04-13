@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="unos">
+      <div class="container-podaci">
+      <label for="ime">Ime: </label>
+      <input type="text" id="ime" [(ngModel)]="this.autorDodajRequest.ime">
+      <label for="prezime">Prezime: </label>
+      <input type="text" id="prezime" [(ngModel)]="this.autorDodajRequest.prezime">
+      <label for="datumRodjenja">Datum rođenja: </label>
+      <input type="date" id="datumRodjenja" [(ngModel)]="this.autorDodajRequest.datumRodjenja">
+      <label for="drzava">Država: </label>
+      <input type="text" id="drzava" [(ngModel)]="this.autorDodajRequest.drzava">
+      <label for="biografija">Biografija: </label>
+      <textarea id="biografija" [(ngModel)]="this.autorDodajRequest.biografija"></textarea>
+      </div>
+    <div class="container-slika">
+      <img class="slika" src="{{this.autorDodajRequest.slikaPutanja}}">
+      <div class="slika-buttoni">
+        <button>Dodaj</button>
+        <button>Ukloni</button>
+      </div>
+    </div>
+</div>
+  <div class="buttoni">
+    <button class="potvrdi" (click)="potvrdi()">Potvrdi</button>
+    <button class="odustani" (click)="odustani()">Odustani</button>
+  </div>
+</div>

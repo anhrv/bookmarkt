@@ -1,0 +1,97 @@
+.container{
+  height: fit-content;
+  width: 100%;
+  padding:40px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container-gornji{
+  height: fit-content;
+  width: 100%;
+  display:flex;
+  justify-content: space-evenly;
+  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  padding-bottom: 40px;
+}
+
+.autor-slika,
+.autor-podaci{
+  flex-basis: 35%;
+}
+
+.autor-slika img{
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+}
+
+.autor-podaci{
+  width: 100%;
+  padding:10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.ime-prezime{
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.datum-rodjenja,
+.drzava,
+.recenzija,
+.biografija{
+  color:#474f62;
+}
+
+
+
+
+.korpa-wishlist{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.korpa-wishlist button{
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  border:none;
+  padding:15px;
+  font-size: large;
+}
+
+.korpa-wishlist button:hover{
+  cursor:pointer;
+}
+
+
+.izmijeni, .obrisi{
+  color:white;
+  width: 40%;
+}
+
+.izmijeni{
+  background-color: #7c95e8;
+}
+
+.izmijeni:hover{
+  cursor: pointer;
+  background-color: #a6b5f5;
+}
+
+.obrisi{
+  background-color: #d97676;
+}
+
+.obrisi:hover{
+  cursor: pointer;
+  background-color: #e89595;
+}

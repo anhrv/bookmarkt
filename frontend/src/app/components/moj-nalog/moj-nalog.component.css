@@ -1,0 +1,107 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+  padding:0 30px 30px 30px;
+}
+
+.podaci,
+.lozinka,
+.brisanje{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+}
+
+.podaci-inputi,
+.lozinka-inputi,
+.brisanje-inputi{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+label, p{
+  font-size: medium;
+  color: #474f62;
+  margin-bottom: 10px;
+}
+
+.tfa-input{
+  display:flex;
+  flex-direction: row;
+  padding:5px 0;
+  justify-content: left;
+}
+.tfa-input input{
+  width: fit-content;
+  margin-left:10px;
+  transform: scale(1.5);
+}
+
+.naslov{
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 10px;
+  color:black;
+  width: fit-content;
+}
+
+.naslov:hover{
+  cursor: pointer;
+  color: #3b3b3b;
+}
+
+input{
+  padding:5px;
+  font-size: medium;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.upozorenje{
+  color:darkred;
+}
+
+.buttoni{
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+button{
+  padding:5px;
+  border:none;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  font-size: medium;
+  margin-right: 20px;
+  color:white;
+}
+
+.potvrdi{
+  background-color: #7c95e8;
+}
+
+.potvrdi:hover{
+  cursor: pointer;
+  background-color: #a6b5f5;
+}
+
+.odustani{
+  background-color: #d97676;
+}
+
+.odustani:hover{
+  cursor: pointer;
+  background-color: #e89595;
+}
